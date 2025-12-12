@@ -1,0 +1,45 @@
+[project]
+name = "daimon"
+version = "1.0.0"
+description = "DAIMON - Personal Exocortex using NOESIS as consciousness engine"
+readme = "docs/README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Juan", email = "juan@noesis.ai"}
+]
+keywords = ["exocortex", "consciousness", "ai", "claude-code", "mcp"]
+
+dependencies = [
+    "fastmcp>=0.1.0",
+    "httpx>=0.25.0",
+    "watchdog>=3.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["collectors*", "integrations*", "endpoints*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
