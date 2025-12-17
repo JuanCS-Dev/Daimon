@@ -28,6 +28,8 @@ def set_consciousness_components(system: "ConsciousnessSystem") -> None:
         system: Initialized ConsciousnessSystem instance
     """
     global _global_consciousness_dict
+    # FIX: Add full system object so endpoints can access all attributes including orchestrator
+    _global_consciousness_dict["system"] = system
     _global_consciousness_dict["tig"] = system.tig_fabric
     _global_consciousness_dict["esgt"] = system.esgt_coordinator
     _global_consciousness_dict["arousal"] = system.arousal_controller

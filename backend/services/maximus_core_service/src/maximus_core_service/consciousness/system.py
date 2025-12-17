@@ -120,7 +120,7 @@ class ReactiveConfig:
     decision_history_size: int = 100  # Recent orchestration decisions
 
     # Feature Flags
-    enable_data_orchestration: bool = False  # DISABLED temporarily - metrics collector bug
+    enable_data_orchestration: bool = True  # RE-ENABLED after diagnostic (no bug found)
 
 
 @dataclass
